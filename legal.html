@@ -2,24 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spelljammer Heist Invitation</title>
+  <title>Legal Boilerplate · Astral Contract</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
       background: radial-gradient(circle at top, #4a7fff 0, #050315 55%, #000000 100%);
-      color: #f5f5f5;
+      color: #e8e8e8;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 20px;
+      align-items: flex-start;
+      padding: 40px 20px;
     }
 
     .stars {
@@ -34,15 +30,15 @@
     }
 
     .card {
-      position: relative;
-      max-width: 700px;
+      max-width: 800px;
       width: 100%;
       background: rgba(5, 3, 21, 0.88);
       border-radius: 20px;
-      padding: 26px 26px 22px;
+      padding: 30px;
       border: 1px solid rgba(119, 212, 255, 0.5);
       box-shadow: 0 0 25px rgba(73, 158, 255, 0.4);
       backdrop-filter: blur(8px);
+      position: relative;
     }
 
     .card::before {
@@ -56,161 +52,38 @@
       filter: blur(6px);
     }
 
-    .tagline {
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      font-size: 0.65rem;
-      opacity: 0.8;
-      margin-bottom: 6px;
-    }
-
     h1 {
-      font-size: 1.9rem;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      margin-bottom: 16px;
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #77d4ff, transparent);
-      margin-bottom: 14px;
-      opacity: 0.8;
-    }
-
-    .section-title {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
+      font-size: 1.8rem;
       text-transform: uppercase;
-      opacity: 0.75;
-      margin-bottom: 4px;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
     }
 
-    .text-block {
-      font-size: 0.95rem;
+    h2 {
+      margin-top: 24px;
+      font-size: 1.2rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    p {
       line-height: 1.6;
+      margin: 10px 0;
       opacity: 0.95;
-      margin-bottom: 10px;
+      font-size: 0.95rem;
     }
 
-    .highlight {
-      color: #77d4ff;
-      font-weight: 600;
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px 18px;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-    }
-
-    .detail-label {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      opacity: 0.7;
-      font-size: 0.7rem;
-      margin-bottom: 2px;
-    }
-
-    .detail-value {
-      font-weight: 500;
-    }
-
-    /* countdown styles */
-    .countdown-wrapper {
-      margin-top: 6px;
-      margin-bottom: 14px;
-    }
-
-    .countdown-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.75;
-      margin-bottom: 4px;
-    }
-
-    .countdown-timer {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #77d4ff;
-    }
-
-    .warning {
-      font-size: 0.8rem;
-      color: #ffb3b3;
-      opacity: 0.9;
-      margin-bottom: 12px;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-      align-items: center;
-    }
-
-    .btn {
-      border: none;
-      border-radius: 999px;
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
+    .back-btn {
+      margin-top: 30px;
+      display: inline-block;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
       background: linear-gradient(120deg, #5b9dff, #7bffdd);
       color: #050315;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
       box-shadow: 0 0 12px rgba(91, 157, 255, 0.7);
-      white-space: nowrap;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #f5f5f5;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      box-shadow: none;
-      opacity: 0.9;
-    }
-
-    .btn span {
-      font-size: 1rem;
-    }
-
-    .footer-note {
-      margin-top: 10px;
-      font-size: 0.75rem;
-      opacity: 0.7;
-    }
-
-    code {
-      font-size: 0.8rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 2px 5px;
-      border-radius: 4px;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.6rem;
-      }
-      .card {
-        padding: 20px 18px 18px;
-      }
-      .tagline {
-        font-size: 0.6rem;
-      }
     }
   </style>
 </head>
@@ -218,123 +91,47 @@
   <div class="stars"></div>
 
   <main class="card">
-    <div class="tagline">CONFIDENTIAL ASTRAL CONTRACT</div>
-    <h1>The Silent Vault Job</h1>
-    <p class="subtitle">
-      An anonymous benefactor is assembling a small, very quiet crew for a
-      <span class="highlight">one-way heist</span> somewhere in wildspace.
+    <h1>Legal Boilerplate</h1>
+    <p>This document constitutes the <strong>Supplemental Astral Liability Framework</strong> for Operation: BLACK WAKE.</p>
+
+    <h2>1. ASSUMPTION OF RISK</h2>
+    <p>
+      By participating in the Silent Vault Job, all crew members acknowledge exposure to:  
+      existential collapse, planar shearing, identity fragmentation, soul-anchoring failures,
+      divine misidentification, infernal third-party claims, extradimensional parasites,
+      unauthorized memory extraction, and spontaneous musical numbers.
     </p>
 
-    <div class="divider"></div>
-
-    <div class="section">
-      <div class="section-title">Your Offer</div>
-      <p class="text-block">
-        Board a spelljamming vessel. Infiltrate a heavily warded astral vault.
-        Extract a single object of unknown origin. Payment is in untraceable
-        platinum, relics, and favors owed across the Spheres.
-      </p>
-      <p class="text-block">
-        Survival not guaranteed. Glory almost certain. Consequences… classified.
-      </p>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Job Details</div>
-      <div class="details-grid">
-        <div>
-          <div class="detail-label">Operation Codename</div>
-          <div class="detail-value">PROJECT: BLACK WAKE</div>
-        </div>
-        <div>
-          <div class="detail-label">Rendezvous</div>
-          <div class="detail-value">Session 0 · Next Saturday · 19:30</div>
-        </div>
-        <div>
-          <div class="detail-label">Location</div>
-          <div class="detail-value">Secret Dock, "DM’s Table"</div>
-        </div>
-        <div>
-          <div class="detail-label">Crew Requirements</div>
-          <div class="detail-value">4–6 reckless specialists</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- countdown block -->
-    <div class="section countdown-wrapper">
-      <div class="countdown-label">Time Until Rendezvous</div>
-      <div id="countdown" class="countdown-timer">
-        Calculating…
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">What You Need To Do</div>
-      <p class="text-block">
-        1. Prepare a <span class="highlight">level 1 Spelljammer character</span> 
-        (any official 5e options your DM allows).  
-        2. Bring a short backstory with at least <em>one</em> debt, secret, or
-        crime you’re not proud of.  
-        3. Be ready to sign away… certain rights.
-      </p>
-    </div>
-
-    <p class="warning">
-      ⚠️ WARNING: This job may be a setup. Trust no one. Especially the sender
-      of this message.
+    <h2>2. WAIVER OF LIABILITY</h2>
+    <p>
+      The Benefactor, its subsidiaries, shell identities, proxies, or unknowable cosmic reflections
+      accept no responsibility for:  
+      lost limbs, lost time, lost relatives, lost cause, or lost marbles.
     </p>
 
-    <div class="button-row">
-      <a class="btn" href="mailto:youremail@example.com?subject=Heist%20Accepted">
-        <span>✓</span> ACCEPT THE JOB
-      </a>
-
-      <a class="btn btn-secondary" href="#">
-        🕯 Request More Intel
-      </a>
-
-      <a class="btn btn-secondary" href="legal.html">
-        📜 Legal Boilerplate
-      </a>
-    </div>
-
-    <p class="footer-note">
-      DM note: You can edit this page directly in GitHub by opening
-      <code>index.html</code> and changing the text.
+    <h2>3. PROPERTY RIGHTS</h2>
+    <p>
+      All objects retrieved from the Vault become immediate property of the Benefactor.  
+      Crew members may be permitted to retain sentimental items, provided they are not cursed,
+      explosive, sentient, or otherwise classified as “legally alive.”
     </p>
+
+    <h2>4. CONFIDENTIALITY</h2>
+    <p>
+      Crew members agree not to disclose mission details until:  
+      • 100 years have passed,  
+      • all involved parties are dead, or  
+      • the DM decides it makes a cool plot twist.
+    </p>
+
+    <h2>5. TERMINATION CLAUSE</h2>
+    <p>
+      Participation may end upon completion, death, disintegration, devouring, 
+      betrayal, or DM fiat.  
+      Resurrection does not void the contract.
+    </p>
+
+    <a class="back-btn" href="index.html">⟵ Return to the Invitation</a>
   </main>
-
-  <script>
-    // Session 0: next Saturday, 2025-11-29 at 19:30 in UTC+2
-    const targetDate = new Date("2025-11-29T19:30:00+02:00");
-    const countdownEl = document.getElementById("countdown");
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-
-      if (diff <= 0) {
-        countdownEl.textContent = "The heist has begun.";
-        clearInterval(timer);
-        return;
-      }
-
-      const totalSeconds = Math.floor(diff / 1000);
-      const days = Math.floor(totalSeconds / 86400);
-      const hours = Math.floor((totalSeconds % 86400) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-
-      countdownEl.textContent =
-        days + "d " +
-        hours.toString().padStart(2, "0") + "h " +
-        minutes.toString().padStart(2, "0") + "m " +
-        seconds.toString().padStart(2, "0") + "s";
-    }
-
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
