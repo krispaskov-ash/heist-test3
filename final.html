@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Mission Accepted — Terminal Confirmation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+  body {
+    background: #000000;
+    color: #00ff99;
+    font-family: "Courier New", monospace;
+    margin: 0;
+    padding: 40px;
+    overflow: hidden;
+  }
+
+  #terminal {
+    max-width: 800px;
+    margin: 0 auto;
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .flash {
+    animation: flashScreen 0.2s ease-in-out;
+  }
+
+  @keyframes flashScreen {
+    0% { background: #ffffff; }
+    100% { background: #000000; }
+  }
+
+  #selfDestruct {
+    margin-top: 20px;
+    color: #ff4444;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+<div id="terminal"></div>
+<div id="selfDestruct"></div>
+
+<script>
+  const lines = [
+    "ESTABLISHING CONNECTION TO ASTRAL OPERATIONS DIVISION…",
+    "AUTHENTICATING OPERATIVE BIOMETRICS…",
+    "VALIDATION CODE: ACCEPT",
+    "CONFIRMING CONSENT TO CLAUSE SET 77-Ξ…",
+    "",
+    ">>> MISSION STATUS: \n>>> \x1b[1mACCEPTED\x1b[0m",
+    "",
+    "INITIALIZING SECURE CHANNEL LOCKDOWN…",
+    "PURGING COMMUNICATION LOGS…",
+    "",
+    "TRANSMISSION WILL SELF-DESTRUCT SHORTLY."
+  ];
+
+  let index = 0;
+  const terminal = document.getElementById("terminal");
+  const selfDestruct = document.getElementById("selfDestruct");
+
+  function typeLine() {
+    if (index >= lines.length) {
+      startSelfDestruct();
+      return;
+    }
+
+    const line = lines[index];
+    let charIndex = 0;
+
+    const typer = setInterval(() => {
+      terminal.innerHTML += line.charAt(charIndex);
+      charIndex++;
+
+      if (charIndex >= line.length) {
+        clearInterval(typer);
+        terminal.innerHTML += "\n";
+        index++;
+
+        // Flash effect on mission accepted line
+        if (line.includes("ACCEPTED")) {
+          document.body.classList.add("flash");
+          setTimeout(() => document.body.classList.remove("flash"), 200);
+        }
+
+        setTimeout(typeLine, 150);
+      }
+    }, 25);
+  }
+
+  function startSelfDestruct() {
+    let t = 7;
+
+    const timer = setInterval(() => {
+      selfDestruct.innerHTML = "SELF-DESTRUCTING TRANSMISSION IN: " + t;
+      t--;
+
+      if (t < 0) {
+        clearInterval(timer);
+        document.body.innerHTML = ""; // Fake “destruction”
+        window.location.href = "invite.html"; // Redirect after destruction
+      }
+    }, 1000);
+  }
+
+  typeLine();
+</script>
+</body>
+</html>
