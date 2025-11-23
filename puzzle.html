@@ -141,7 +141,7 @@
     </p>
 
     <label for="code">Type the operation codename exactly as shown on the invitation:</label>
-    <input id="code" type="text" placeholder="e.g. PROJECT: BLACK WAKE" autocomplete="off" />
+    <input id="code" type="text" placeholder="e.g. OPERATION: GHOST PAYROLL" autocomplete="off" />
 
     <div>
       <button class="btn" onclick="checkCode()">Submit</button>
@@ -156,7 +156,7 @@
       const input = document.getElementById("code").value.trim();
       const result = document.getElementById("result");
 
-      if (input === "PROJECT: BLACK WAKE") {
+      if (input === "OPERATION: GHOST PAYROLL") {
         result.innerHTML = "<a class='btn' href='invite.html'>Access Granted. Proceed.</a>";
       } else {
         result.innerHTML = "<span class='err'>Access denied. Try reading the contract again.</span>";
