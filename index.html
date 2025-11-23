@@ -286,4 +286,53 @@
     </p>
 
     <div class="button-row">
-      <a class="btn" href="mailto:youremai
+          <div class="button-row">
+      <a class="btn" href="mailto:youremail@example.com?subject=Heist%20Accepted">
+        <span>✓</span> ACCEPT THE JOB
+      </a>
+
+      <a class="btn btn-secondary" href="legal.html">
+        📜 Legal Boilerplate
+      </a>
+    </div>
+
+    <p class="footer-note">
+      DM note: You can edit this page directly in GitHub by opening
+      <code>index.html</code> and changing the text.
+    </p>
+  </main>
+
+  <script>
+    // Session 0: next Saturday, 2025-11-29 at 19:30 in UTC+2
+    const targetDate = new Date("2025-11-29T19:30:00+02:00");
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "The heist has begun.";
+        clearInterval(timer);
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      countdownEl.textContent =
+        days + "d " +
+        hours.toString().padStart(2, "0") + "h " +
+        minutes.toString().padStart(2, "0") + "m " +
+        seconds.toString().padStart(2, "0") + "s";
+    }
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
+
