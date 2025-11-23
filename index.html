@@ -123,6 +123,26 @@
       font-weight: 500;
     }
 
+    /* countdown styles */
+    .countdown-wrapper {
+      margin-top: 6px;
+      margin-bottom: 14px;
+    }
+
+    .countdown-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 4px;
+    }
+
+    .countdown-timer {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #77d4ff;
+    }
+
     .warning {
       font-size: 0.8rem;
       color: #ffb3b3;
@@ -228,18 +248,24 @@
         </div>
         <div>
           <div class="detail-label">Rendezvous</div>
-          <!-- CHANGE THIS TO YOUR REAL SESSION DATE/TIME -->
-          <div class="detail-value">Session 0 · Stardate TBD</div>
+          <div class="detail-value">Session 0 · Next Saturday · 19:30</div>
         </div>
         <div>
           <div class="detail-label">Location</div>
-          <!-- CHANGE THIS TO “DISCORD”, “ROLL20”, “IN-PERSON IN X” ETC. -->
-          <div class="detail-value">Secret Dock, &quot;DM’s Table&quot;</div>
+          <div class="detail-value">Secret Dock, "DM’s Table"</div>
         </div>
         <div>
           <div class="detail-label">Crew Requirements</div>
           <div class="detail-value">4–6 reckless specialists</div>
         </div>
+      </div>
+    </div>
+
+    <!-- countdown block -->
+    <div class="section countdown-wrapper">
+      <div class="countdown-label">Time Until Rendezvous</div>
+      <div id="countdown" class="countdown-timer">
+        Calculating…
       </div>
     </div>
 
@@ -259,24 +285,5 @@
       of this message.
     </p>
 
-   <div class="button-row">
-
-  <a class="btn" href="mailto:youremail@example.com?subject=Heist%20Accepted">
-    <span>✓</span> ACCEPT THE JOB
-  </a>
-
-  <a class="btn btn-secondary" href="legal.html">
-    📜 Legal Boilerplate
-  </a>
-
-</div>
-
-
-    <p class="footer-note">
-      DM note: You can edit this page directly in GitHub by opening
-      <code>index.html</code> and changing the text (look for comments like
-      &lt;!-- CHANGE THIS --&gt;).
-    </p>
-  </main>
-</body>
-</html>
+    <div class="button-row">
+      <a class="btn" href="mailto:youremai
