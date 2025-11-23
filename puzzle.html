@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Access Challenge · Silent Vault Job</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #4a7fff 0, #050315 55%, #000000 100%);
+      color: #e8e8e8;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 10% 20%, #ffffff88 0, transparent 60%),
+        radial-gradient(1px 1px at 80% 30%, #ffffffaa 0, transparent 50%),
+        radial-gradient(1px 1px at 50% 80%, #ffffff55 0, transparent 50%);
+      opacity: 0.6;
+    }
+
+    .card {
+      max-width: 700px;
+      width: 100%;
+      background: rgba(5, 3, 21, 0.88);
+      border-radius: 20px;
+      padding: 26px;
+      border: 1px solid rgba(119, 212, 255, 0.5);
+      box-shadow: 0 0 25px rgba(73, 158, 255, 0.4);
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: conic-gradient(from 180deg, #5b9dff, #7bffdd, #ff9dff, #5b9dff);
+      opacity: 0.25;
+      z-index: -1;
+      filter: blur(6px);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(119, 212, 255, 0.6);
+      background: rgba(3, 1, 15, 0.9);
+      color: #e8e8e8;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      box-shadow: 0 0 0 1px #77d4ff;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: linear-gradient(120deg, #5b9dff, #7bffdd);
+      color: #050315;
+      box-shadow: 0 0 12px rgba(91, 157, 255, 0.7);
+      margin-top: 4px;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #f5f5f5;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: none;
+      margin-left: 8px;
+    }
+
+    #result {
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+
+    .ok {
+      color: #77ffb0;
+    }
+
+    .err {
+      color: #ffb3b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <main class="card">
+    <h1>Access Challenge</h1>
+    <p class="subtitle">
+      To confirm you actually read the contract and possess at least one functioning finger,
+      answer this offensively simple prompt:
+    </p>
+
+    <label for="code">Type the operation codename exactly as shown on the invitation:</label>
+    <input id="code" type="text" placeholder="e.g. PROJECT: BLACK WAKE" autocomplete="off" />
+
+    <div>
+      <button class="btn" onclick="checkCode()">Submit</button>
+      <a class="btn btn-secondary" href="index.html">⟵ Restart</a>
+    </div>
+
+    <div id="result"></div>
+  </main>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById("code").value.trim();
+      const result = document.getElementById("result");
+
+      if (input === "PROJECT: BLACK WAKE") {
+        result.innerHTML = "<a class='btn' href='invite.html'>Access Granted. Proceed.</a>";
+      } else {
+        result.innerHTML = "<span class='err'>Access denied. Try reading the contract again.</span>";
+      }
+    }
+  </script>
+</body>
+</html>
